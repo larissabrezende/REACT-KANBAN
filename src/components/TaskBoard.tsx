@@ -15,9 +15,13 @@ export const TaskBoard: React.FC = () => {
 
   return (
     <ScrollArea scrollbars="horizontal">
-      <Grid columns={"3"} gap={"4"} minWidth={"64rem"}>
-        <Flex direction={"column"} gap={"4"}>
-          <Badge size={"3"} color="gray">
+      <Grid
+        columns={{ initial: "1", md: "3" }} 
+        gap="4"
+        minWidth="64rem"
+      >
+        <Flex direction="column" gap="4">
+          <Badge size="3" color="gray">
             Para Fazer ({tasksTodo.length})
           </Badge>
 
@@ -26,8 +30,8 @@ export const TaskBoard: React.FC = () => {
           ))}
         </Flex>
 
-        <Flex direction={"column"} gap={"4"}>
-          <Badge size={"3"} color="yellow">
+        <Flex direction="column" gap="4">
+          <Badge size="3" color="yellow">
             Em Progresso ({tasksInProgress.length})
           </Badge>
 
@@ -36,8 +40,8 @@ export const TaskBoard: React.FC = () => {
           ))}
         </Flex>
 
-        <Flex direction={"column"} gap={"4"}>
-          <Badge size={"3"} color="green">
+        <Flex direction="column" gap="4">
+          <Badge size="3" color="green">
             Concluídas ({tasksDone.length})
           </Badge>
 
@@ -49,3 +53,4 @@ export const TaskBoard: React.FC = () => {
     </ScrollArea>
   );
 };
+
